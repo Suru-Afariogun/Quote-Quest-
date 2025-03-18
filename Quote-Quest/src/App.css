@@ -1,3 +1,37 @@
+html {
+  background-color: rgb(59, 88, 112);
+}
+#GamestartBtn {
+  background-color: #357ab6; /* Sets the button's background color */
+  border-radius: 20%;
+  color: white; /* Sets the text color to white */
+  border: none; /* Removes the border */
+  padding: 24px 48px; /* Adds padding around the button text */
+  width: 135px;
+  font-size: 40px; /* Sets the font size for the button */
+  font-weight: bold;
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  border-radius: 8px; /* Rounds the corners of the button */
+  position: absolute; /* Allows precise positioning */
+  bottom: 20px; /* Positions the button 150px from the top */
+  transform: translateX(-50%); /* Centers the button horizontally */
+}
+
+#QuoteofthedayBtn {
+  background-color: #03335e; /* Sets the button's background color */
+  border-radius: 10%;
+  color: white; /* Sets the text color to white */
+  border: none; /* Removes the border */
+  padding: 12px 24px; /* Adds padding around the button text */
+  width: 135px;
+  font-size: 22px; /* Sets the font size for the button */
+  font-weight: bold;
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  border-radius: 8px; /* Rounds the corners of the button */
+  position: absolute; /* Allows precise positioning */
+  bottom: 50px; /* Positions the button 150px from the top */
+  transform: translateX(-50%); /* Centers the button horizontally */
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
