@@ -1,10 +1,17 @@
-import {fetchData} from fetchData 
+import { handleFetch } from "./fetchData";
 
-export const oneQuote =()=>{ return fetchData("https://zenquotes.io/api/random/[your_key]")}
+export const oneQuote = () => {
+  return handleFetch("https://zenquotes.io/api/random/[your_key]");
+};
 
-export const multipleQuotes= ()=>{return fetchData("https://zenquotes.io/api/quotes/[your_key]")}
+export const multipleQuotes = () => {
+  return handleFetch("https://zenquotes.io/api/quotes/[your_key]");
+};
 
-export const dailyQuote =()=>{return fetchData("https://zenquotes.io/api/today/[your_key]")}
+export const dailyQuote = () => {
+  return handleFetch("https://zenquotes.io/api/today/[your_key]");
+};
 
-export const yesOrNo =()=>{return fetchData("https://yesno.wtf/api")}
-
+export const yesOrNo = () => {
+  return handleFetch("https://yesno.wtf/api");
+};
