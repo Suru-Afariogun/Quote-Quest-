@@ -1,23 +1,35 @@
 import { useState, useEffect } from "react";
 import { dailyQuote } from "../Adapters/quoteAdapters";
-import handleFetch from "../Adapters/fetchData";
+
+
 export const QuoteOfToday = () => {
-  const [quote, setQuote] = useState();
-  const [err, setErr] = useState();
+  const [quote, setQuote] = useState('');
+  const [error, setError] = useState(null);
+
   useEffect(() => {
     const doFetch = async () => {
-      const [data, error] = await dailyQuote();
-      if (data) setQuote(data);
-      if (error) setErr(error);
-      console.log(data);
+      const [data, fetchError] = await dailyQuote();
+      if (fetchError) {
+        setError(fetchError);
+        return;
+      }
+      setQuote(data);
+      console.log("Fetched Quote:", data);
     };
+
     doFetch();
   }, []);
+
+  if (error) return <div>Error loading quote: {error.message}</div>;
+  if (!quote) return <div>Loading quote...</div>;
+
   return (
     <div>
-      <h2>{quote[0]}</h2>
-      <p>quote</p>
+      <h2>{quote?.q}quote</h2>
+      <p>{quote?.a}author</p>
     </div>
   );
 };
+
 export default QuoteOfToday;
+
