@@ -1,9 +1,6 @@
-import {HomepageTitle} from '..homepage/components/'
+import { HomepageTitle } from "../components/homepage";
 
-export const renderHome=()=>{
-    return(
-        <HomepageTitle></HomepageTitle>
-    )
-}
-export default renderHome
-
+export const RenderHome = () => {
+  return <HomepageTitle></HomepageTitle>;
+};
+export default RenderHome;

@@ -1,6 +1,5 @@
-import {QuoteOfToday} from './components/'
-export const renderDailyQuote=()=>{
-    return(
-
-    )
-}
+import { QuoteOfToday } from "../components/DailyQuote";
+export const RenderDailyQuote = () => {
+  return <QuoteOfToday />;
+};
+export default RenderDailyQuote;
