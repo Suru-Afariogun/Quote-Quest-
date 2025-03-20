@@ -4,7 +4,7 @@ export const oneQuote = () => {
   return handleFetch("https://zenquotes.io/api/random/[your_key]");
 };
 
-export const multipleQuotes = async() => {
+export const multipleQuotes = async () => {
   const [data, error] = await handleFetch(`/api/api/quotes/[your_key]`);
 
   if (error) {
@@ -12,7 +12,7 @@ export const multipleQuotes = async() => {
     return null; // Return null if error occurs
   }
 
-  //console.log("Daily Quote:", data);
+  console.log("Daily Quote:", data);
   return data;
 };
 
