@@ -1,11 +1,7 @@
 import { handleFetch } from "./fetchData";
 
-export const oneQuote = () => {
-  return handleFetch("https://zenquotes.io/api/random/[your_key]");
-};
-
-export const multipleQuotes = async () => {
-  const [data, error] = await handleFetch(`/api/api/quotes/[your_key]`);
+export const oneQuote = async() => {
+  const [data, error] = await handleFetch(`/api/api/random/[your_key]`);
 
   if (error) {
     console.error("Failed to fetch daily quote:", error);
@@ -13,6 +9,18 @@ export const multipleQuotes = async () => {
   }
 
   console.log("Daily Quote:", data);
+  return data;
+};
+
+export const multipleQuotes = async() => {
+  const [data, error] = await handleFetch(`/api/api/quotes/[your_key]`);
+
+  if (error) {
+    console.error("Failed to fetch daily quote:", error);
+    return null; // Return null if error occurs
+  }
+
+  //console.log("Daily Quote:", data);
   return data;
 };
 

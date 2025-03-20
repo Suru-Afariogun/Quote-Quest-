@@ -1,21 +1,67 @@
 import { useState, useEffect } from "react";
 import { QuoteList } from "./QuoteList";
-import { multipleQuotes } from "../Adapters/quoteAdapters";
+import { multipleQuotes, oneQuote } from "../Adapters/quoteAdapters";
 //const data = multipleQuotes();
 //const data = {QuoteList}
 
-export const Quest = ({ Quotes }) => {
-  const [currentQuote, setCurrentQuote] = useState(0);
 
-  const { questionQuotes, choices, correctAnswers } = Quotes[currentQuote];
-
-  return (
-    <div className="question-container">
-      <span className="active-question">/{currentQuote + 1}</span>
-      <span className="total-question">/{QuoteList.length}</span>
-      <h2>{questionQuotes}</h2>
-      <ul>{choices.map((answer, index) => {})}</ul>
-    </div>
-  );
-};
-export default Quest;
+export const Quest = () => {
+    const [currentQuote, setCurrentQuote] = useState(null);
+    const [currentChoices, setChoices] = useState([]);
+    const [options, setOptions] = useState([]);
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [error, setError] = useState("");
+  
+    useEffect(() => {
+      multipleQuotes().then(setChoices).catch(() => setError("Failed to fetch choices."));
+      oneQuote().then((data) => setCurrentQuote(data[0])).catch(() => setError("Shhhh! looking for words of wisdom"));
+    }, []);
+  
+    useEffect(() => {
+      if (currentQuote && currentChoices.length > 0) {
+        generateOptions();
+      }
+    }, [currentQuote, currentChoices]);
+  
+    const generateOptions = () => {
+      const incorrectAuthors = currentChoices
+        .filter((quote) => quote.a !== currentQuote.a)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3)
+        .map((quote) => quote.a);
+  
+      setOptions([...incorrectAuthors, currentQuote.a].sort(() => Math.random() - 0.5));
+    };
+  
+    const handleAnswerClick = (author) => {
+      setSelectedAnswer(author);
+    };
+  
+    if (error) return <div>Error: {error}</div>;
+    if (!currentQuote || options.length === 0) return <div>Loading...</div>;
+  
+    return (
+      <div className="question-container">
+        <h2>Who said this?</h2>
+        <p>"{currentQuote.q}"</p>
+        <div className="options">
+          {options.map((author, index) => (
+            <button 
+              key={index} 
+              onClick={() => handleAnswerClick(author)} 
+              className={`option-btn ${selectedAnswer === author ? (author === currentQuote.a ? 'correct' : 'wrong') : ''}`}
+            >
+              {author}
+            </button>
+          ))}
+        </div>
+        {selectedAnswer && (
+          <p className={`result ${selectedAnswer === currentQuote.a ? 'correct' : 'wrong'}`}>
+            {selectedAnswer === currentQuote.a ? "✅ Correct!" : "❌ Wrong! Try again."}
+          </p>
+        )}
+      </div>
+    );
+  };
+  
+  export default Quest;

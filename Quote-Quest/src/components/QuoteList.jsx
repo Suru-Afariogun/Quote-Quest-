@@ -22,18 +22,21 @@ export const QuoteList = () => {
   if (error) return <div>Error loading quotes: {error}</div>;
   //if (!quotes.length) return <div>Loading quotes...</div>;
 
-  return quotes.data;
-  // <div>
-  //   <h2>Quotes List</h2>
-  //   <ul>
-  //     {quotes.map((quote, index) => (
-  //       <li key={index}>
-  //         <p>"{quote.q}"</p>
-  //         <p>- {quote.a}</p>
-  //       </li>
-  //     ))}
-  //   </ul>
-  // </div>
+  return (
+
+      
+      <div>
+    <h2>Quotes List</h2>
+    <ul>
+      {quotes.map((quote, index) => (
+          <li key={index}>
+          <p>"{quote.q}"</p>
+          <p>- {quote.a}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+    )
 };
 
 export default QuoteList;
