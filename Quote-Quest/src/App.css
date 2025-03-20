@@ -17,7 +17,7 @@ html {
   transform: translateX(-50%); /* Centers the button horizontally */
 }
 
-#QuoteofthedayBtn {
+#GamestartBtn {
   background-color: #03335e; /* Sets the button's background color */
   border-radius: 10%;
   color: white; /* Sets the text color to white */
