@@ -1,96 +1,322 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+html,
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: rgb(59, 88, 112);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.title {
+  display: table-cell;
+  vertical-align: top;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  background-color: rgba(7, 94, 255, 0.219);
+  border: 1px solid rgba(5, 168, 233, 0.315);
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  backdrop-filter: blur(10px);
 }
 
-#app {
-  max-width: 1280px;
+.title h2 {
+  text-align: top;
+  font-size: 150px;
+  color: #ffffff;
+  margin-top: 100px;
+  margin-bottom: 1px;
+}
+
+.title p {
+  font-size: 30px;
+  color: #ffffff;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-button {
+.GamestartBtn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px;
+  padding: 12px 390px;
+  background-color: #3498db;
+  border: none;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.GamestartBtn:hover {
+  background-color: #021e31;
+}
+
+.GamestartBtn a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  display: block;
+}
+
+.QOTBtn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px;
+  padding: 12px 375px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.QOTBtn:hover {
+  background-color: #67889e;
+}
+
+.QOTBtn a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  display: block;
+}
+
+/* 
+Page 2:Quest css below */
+.question-container {
+  background-color: rgba(229, 234, 243, 0.219);
+  border: 1px solid rgba(5, 168, 233, 0.315);
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  margin: 50px auto;
+  max-width: 3000px;
+}
+
+.question-container h2 {
+  text-align: top;
+  font-size: 150px;
+  color: #ffffff;
+  margin-top: 100px;
+  margin-bottom: 1px;
+}
+
+.question-container p {
+  color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  font-size: 30px;
+}
+
+.options {
+  color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  font-size: 30px;
+  background-color: rgba(229, 234, 243, 0.219);
+  border: 1px solid rgba(5, 168, 233, 0.315);
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.option-btn {
+  margin: 10px;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option-btn:hover {
+  background-color: #086caf;
+}
+
+.option-btn a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 50px;
+  display: block;
+}
+
+@keyframes wrong {
+  0% {
+    color: red;
+    left: 0px;
+    top: 0px;
   }
-  a:hover {
-    color: #747bff;
+  25% {
+    color: rgb(223, 8, 8);
+    left: 200px;
+    top: 0px;
   }
-  button {
-    background-color: #f9f9f9;
+  50% {
+    color: rgb(167, 7, 7);
+    left: 200px;
+    top: 200px;
   }
+  75% {
+    color: rgb(141, 3, 3);
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    color: rgb(77, 4, 4);
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.wrong {
+  color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  font-size: 30px;
+  animation-name: wrong;
+  animation-duration: 4s;
+  animation-iteration-count: 100;
+}
+
+@keyframes correct {
+  0% {
+    color: rgb(43, 255, 0);
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    color: rgb(13, 153, 1);
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    color: rgb(2, 105, 10);
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    color: rgb(1, 63, 20);
+    left: 0px;
+    top: 200px;
+  }
+  85% {
+    color: rgb(0, 104, 61);
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    color: rgb(1, 168, 99);
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.correct {
+  color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  font-size: 30px;
+  animation-name: correct;
+  animation-duration: 4s;
+  animation-iteration-count: 100;
+}
+
+.error {
+  color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  font-size: 30px;
+}
+
+@keyframes error {
+  0% {
+    color: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    color: rgb(223, 8, 8);
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    color: rgb(167, 7, 7);
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    color: rgb(141, 3, 3);
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    color: rgb(77, 4, 4);
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.error:hover {
+  color: #5a0303;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  font-size: 60px;
+  animation-name: error;
+  animation-duration: 4s;
+  animation-iteration-count: 100;
+}
+
+.load {
+  color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  font-size: 100px;
+  animation-name: correct;
+  animation-duration: 2s;
+  animation-iteration-count: 100;
+}
+
+/*Quote of the day css below  */
+
+@keyframes daily {
+  0% {
+    color: rgb(0, 255, 13);
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    color: rgb(166, 255, 0);
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    color: rgb(0, 255, 136);
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    color: rgb(166, 128, 255);
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    color: rgb(255, 94, 134);
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.dailyquote {
+  color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  font-size: 50px;
+  animation-name: daily;
+  animation-duration: 4s;
+  animation-iteration-count: 1000;
 }

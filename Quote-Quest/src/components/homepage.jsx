@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import "../style.css";
 export const HomepageTitle = () => {
   return (
     <div>
@@ -11,12 +11,14 @@ export const HomepageTitle = () => {
           world?
         </p>
       </div>
-      <button className="GamestartBtn">
-        <Link to="/Quest">Quest Start</Link>
-      </button>
-      <button className="GamestartBtn">
-        <Link to="/DailyQuote">Quote of the Day</Link>
-      </button>
+      <div>
+        <button className="GamestartBtn">
+          <Link to="/Quest">Quest Start</Link>
+        </button>
+        <button className="QOTBtn">
+          <Link to="/DailyQuote">Quote of the Day</Link>
+        </button>
+      </div>
     </div>
   );
 };
