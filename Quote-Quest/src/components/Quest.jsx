@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { QuoteList } from "./QuoteList";
 import { multipleQuotes, oneQuote } from "../Adapters/quoteAdapters";
+import "../style.css";
 //const data = multipleQuotes();
 //const data = {QuoteList}
 
@@ -12,7 +13,7 @@ export const Quest = () => {
   const [error, setError] = useState("");
   const timeoutRef = useRef(null);
   const ErrorQuote = (
-    <h6>
+    <h6 className="load">
       "The two most powerful warriors are patience and time." - Leo Tolstoy
     </h6>
   );
@@ -80,12 +81,13 @@ export const Quest = () => {
 
   if (error)
     return (
-      <div>
+      <div className="error">
         {error}
         {ErrorQuote}
       </div>
     );
-  if (!currentQuote || options.length === 0) return <div>Loading...</div>;
+  if (!currentQuote || options.length === 0)
+    return <div className="load">Loading...</div>;
 
   return (
     <div>

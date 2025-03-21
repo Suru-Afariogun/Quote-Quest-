@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import "../style.css";
 export const HomepageTitle = () => {
   return (
     <div>
@@ -14,7 +14,7 @@ export const HomepageTitle = () => {
       <button className="GamestartBtn">
         <Link to="/Quest">Quest Start</Link>
       </button>
-      <button className="GamestartBtn">
+      <button className="QOTBtn">
         <Link to="/DailyQuote">Quote of the Day</Link>
       </button>
     </div>

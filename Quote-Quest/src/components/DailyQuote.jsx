@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { dailyQuote } from "../Adapters/quoteAdapters";
-
+import "../style.css";
 
 export const QuoteOfToday = () => {
-  const [quote, setQuote] = useState('');
+  const [quote, setQuote] = useState("");
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -20,11 +20,12 @@ export const QuoteOfToday = () => {
     doFetch();
   }, []);
 
-  if (error) return <div>Error loading quote: {error.message}</div>;
+  if (error)
+    return <div className="error">Error loading quote: {error.message}</div>;
   if (!quote) return <div>Loading quote...</div>;
 
   return (
-    <div>
+    <div className="dailyquote">
       <h2>{quote?.q}quote</h2>
       <p>{quote?.a}author</p>
     </div>
@@ -32,4 +33,3 @@ export const QuoteOfToday = () => {
 };
 
 export default QuoteOfToday;
-
