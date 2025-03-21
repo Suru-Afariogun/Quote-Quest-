@@ -17,7 +17,6 @@ export const Quest = () => {
     </h6>
   );
 
-  // Ensure score persists across refreshes
   useEffect(() => {
     if (!sessionStorage.getItem("score")) {
       sessionStorage.setItem("score", "0");
