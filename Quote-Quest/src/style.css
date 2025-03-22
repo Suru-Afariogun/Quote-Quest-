@@ -340,3 +340,17 @@ Page 2:Quest css below */
   animation-duration: 4s;
   animation-iteration-count: 1000;
 }
+
+.home-button {
+  width: 1000px;
+  height: 1000px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.home-button:hover {
+  transform: scale(1.1);
+}

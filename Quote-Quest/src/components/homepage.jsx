@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import "../style.css";
+import homeIcon from "../Quote Quest poster.png";
 export const HomepageTitle = () => {
   return (
     <div>
+      {/* Home Button */}
+      <Link to="/">
+        <img src={homeIcon} alt="Home" className="home-button" />
+      </Link>
       <div className="title">
         {" "}
         <h2>Quote Quest</h2>
@@ -20,4 +25,5 @@ export const HomepageTitle = () => {
     </div>
   );
 };
+
 export default HomepageTitle;

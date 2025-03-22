@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { QuoteList } from "./QuoteList";
 import { multipleQuotes, oneQuote } from "../Adapters/quoteAdapters";
 import "../style.css";
+import { Link } from "react-router-dom";
+import homeIcon from "../Quote Quest poster.png";
 //const data = multipleQuotes();
 //const data = {QuoteList}
 
@@ -91,6 +93,11 @@ export const Quest = () => {
 
   return (
     <div>
+      {/* Home Button */}
+      <Link to="/">
+        <img src={homeIcon} alt="Home" className="home-button" />
+      </Link>
+
       <h3 className="highscore">Score: {sessionStorage.getItem("score")}</h3>
       <div className="question-container">
         <h2>Who said this?</h2>

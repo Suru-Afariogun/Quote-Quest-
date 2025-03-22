@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { dailyQuote } from "../Adapters/quoteAdapters";
 import "../style.css";
-
+import "../style.css";
+import { Link } from "react-router-dom";
+import homeIcon from "../Quote Quest poster.png";
 export const QuoteOfToday = () => {
   const [quote, setQuote] = useState("");
   const [error, setError] = useState(null);
@@ -25,9 +27,16 @@ export const QuoteOfToday = () => {
   if (!quote) return <div>Loading quote...</div>;
 
   return (
-    <div className="dailyquote">
-      <h2>{quote?.q}quote</h2>
-      <p>{quote?.a}author</p>
+    <div>
+      {/* Home Button */}
+      <Link to="/">
+        <img src={homeIcon} alt="Home" className="home-button" />
+      </Link>
+
+      <div className="dailyquote">
+        <h2>{quote?.q}quote</h2>
+        <p>{quote?.a}author</p>
+      </div>
     </div>
   );
 };
