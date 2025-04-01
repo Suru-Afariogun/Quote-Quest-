@@ -34,8 +34,8 @@ export const QuoteOfToday = () => {
       </Link>
 
       <div className="dailyquote">
-        <h2>{quote?.q}quote</h2>
-        <p>{quote?.a}author</p>
+        <h2>{quote?.q}</h2>
+        <p>-{quote?.a}</p>
       </div>
     </div>
   );
