@@ -1,6 +1,6 @@
 # Quote-Quest-
 
-Created by: Avionte and Suru Afariogun
+Created by: Avionte Williams and Suru Afariogun
 
 🚀 Mission Statement
 Our application, Quote-Quest, is for people who know or want to know the creators of famous quotes. It allows users to test their knowledge by matching the correct speakers with their quotes in a quote trivia game.
